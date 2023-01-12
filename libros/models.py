@@ -10,7 +10,10 @@ class Libro(models.Model):
         default=timezone.now)
     published_date = models.DateTimeField(
         blank=True , null= True)
-
+    
+    """
+    Metodos de la clase Libro
+    """
     def publish(self):
         self.published_date = timezone.now()
         self.save()
