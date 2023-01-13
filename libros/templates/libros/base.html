@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/libro.css' %}">
+    <title>Biblioteca</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+
+        h1{
+            font-family: 'Lobster';
+        }
+
+        h1,h5{
+            color: #C25100;
+        }
+
+        a{
+            color: #000000;
+            text-decoration: none;
+        }
+
+        .page-header {
+            background-color: #C25100;
+            margin-top: 0;
+            padding: 20px 20px 20px 40px;
+        }
+
+        .page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+            color: #ffffff;
+            font-size: 36pt;
+            text-decoration: none;
+        }
+
+        .content {
+            margin-left: 40px;
+        }
+
+        .date {
+            color: #828282;
+        }
+
+        .save {
+            float: right;
+        }
+
+        .book-form textarea, .book-form input {
+            width: 100%;
+        }
+
+        .top-menu, .top-menu:hover, .top-menu:visited {
+            color: #ffffff;
+            float: right;
+            font-size: 26pt;
+            margin-right: 20px;
+        }
+
+        .book {
+            margin-bottom: 70px;
+        }
+
+        .book h2 a, .post h2 a:visited {
+            color: #000000;
+        }
+
+    </style>
+
+</head>
+<body>  
+    <div class="page-header">
+        <h1><a href="https://www.python.org/downloads/">Wellcome</a></h1>
+    </div>
+
+    <div class="content conatiner">
+        <div class="row">
+            <div class="col-md-8">
+               {% block content %}
+               {% endblock %}       
+            </div>
+        </div>
+    </div>
+      
+</body>
+</html>

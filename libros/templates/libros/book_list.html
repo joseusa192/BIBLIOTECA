@@ -1,17 +1,14 @@
-<!DOCTYPE html>
-<html lang="sp">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca</title>
-</head>
-<body>
-    <h1>Wellcome</h1>
+{% extends 'libros/base.html' %}
+
+{% block content %}
     {% for libros in libro %}
-    <h5>Titulo: {{ libros.titulo }}</h2>
-    <h5>Descripcion: </h5><p>{{ libros.descripcion|linebreaksbr }}</p>
-    <h5>Fecha Publicacion: {{ libros.published_date }}</h5>
+        <div class="book">
+            <div class="date">
+                <p><i><b> Fecha Publicacion:</b> {{ libros.published_date }}</i></p>
+            </div>
+                <h5>Titulo: </h5><p><a href="{% url 'libro_detail' pk=libros.pk %}">{{ libros.titulo }}</a></p>
+                <h5>Descripcion: </h5><p>{{ libros.descripcion|linebreaksbr }}</p><hr>
+        </div>
     {% endfor %}
-</body>
-</html>
+{% endblock %}                     
+           
