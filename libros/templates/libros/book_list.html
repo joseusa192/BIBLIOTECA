@@ -8,5 +8,10 @@
 </head>
 <body>
     <h1>Wellcome</h1>
+    {% for libros in libro %}
+    <h5>Titulo: {{ libros.titulo }}</h2>
+    <h5>Descripcion: </h5><p>{{ libros.descripcion|linebreaksbr }}</p>
+    <h5>Fecha Publicacion: {{ libros.published_date }}</h5>
+    {% endfor %}
 </body>
 </html>
