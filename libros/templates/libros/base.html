@@ -16,11 +16,11 @@
             padding: 0%;
         }
 
-        h1{
+        h1 , h2{
             font-family: 'Lobster';
         }
 
-        h1,h5{
+        h1,h5,h3{
             color: #C25100;
         }
 
@@ -60,7 +60,7 @@
         .top-menu, .top-menu:hover, .top-menu:visited {
             color: #ffffff;
             float: right;
-            font-size: 26pt;
+            font-size: 36pt;
             margin-right: 20px;
         }
 
@@ -77,7 +77,10 @@
 </head>
 <body>  
     <div class="page-header">
-        <h1><a href="https://www.python.org/downloads/">Wellcome</a></h1>
+        {% if is_authenticated %}
+            <h1><a href="{% url 'new_book' %}" class="top-menu">Nuevo libro <span class="glyphicon glyphicon-plus"></span></a></h1>
+        {% endif %}
+        <h1><a href="http://127.0.0.1:8000/">Wellcome</a></h1>        
     </div>
 
     <div class="content conatiner">
